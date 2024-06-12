@@ -44,13 +44,13 @@
 \usepackage{mathtools}
 \usepackage{caption}
 \usepackage{geometry}
-%% The amsthm package provides extended theorem environments
-%% \usepackage{amsthm}
 
-%% The lineno packages adds line numbers. Start line numbering with
-%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
-%% for the whole article with \linenumbers.
-%% \usepackage{lineno}
+% Table packages
+\usepackage{booktabs,caption}
+\usepackage[flushleft]{threeparttable}
+\usepackage{array}
+
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
 
 % Remove "Preprint submitted to Elsevier" line
 \makeatletter
@@ -103,8 +103,23 @@
 
 \section{Introduction}
 \label{introduction}
-
 \input{sections/1_introduction/1.tex}
+
+\section{Review of the surface code}
+\label{review}
+\input{sections/2_review_surface_code/2.tex}
+
+\section{Decoder}
+\label{decoder}
+\input{sections/3_decoder/3.tex}
+
+\section{Stabilizer}
+\label{stabilizer}
+\input{sections/4_stabilizer/4.tex}
+
+\section{Algorithm developments}
+\label{algorithm}
+\input{sections/5_algorithmic_development/5.tex}
 
 %% If you have bibdatabase file and want bibtex to generate the
 %% bibitems, please use
