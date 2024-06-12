@@ -33,7 +33,7 @@ To differentiate between the codespace and the error space, a projective measure
     Z_1Z_2\ket{\psi}_L = Z_1Z_2(\alpha \ket{00} + \beta \ket{11}) = (+1) \ket{\psi}_L
 \]
 
-The figure shows the circuit implementation of the two-qubit code. Following the error stage, an ancilla qubit $\ket{0}_A$ is introduced to measure the $Z_1Z_2$ stabilizer. The ancilla's outcome is referred to as a syndrome, and we can construct a syndrome table that shows the outcome of the syndrome corresponding to possible errors.
+The figure~\ref{circuit:single} shows the circuit implementation of the two-qubit code. Following the error stage, an ancilla qubit $\ket{0}_A$ is introduced to measure the $Z_1Z_2$ stabilizer. The ancilla's outcome is referred to as a syndrome, and we can construct a syndrome table that shows the outcome of the syndrome corresponding to possible errors.
 
 \begin{figure*}
     \centering
@@ -48,6 +48,8 @@ The figure shows the circuit implementation of the two-qubit code. Following the
             }
         \end{array}
     \]
+    \caption{}
+    \label{circuit:single}
 \end{figure*}
 
 \begin{table}[h]
