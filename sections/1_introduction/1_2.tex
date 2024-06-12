@@ -35,17 +35,20 @@ To differentiate between the codespace and the error space, a projective measure
 
 The figure shows the circuit implementation of the two-qubit code. Following the error stage, an ancilla qubit $\ket{0}_A$ is introduced to measure the $Z_1Z_2$ stabilizer. The ancilla's outcome is referred to as a syndrome, and we can construct a syndrome table that shows the outcome of the syndrome corresponding to possible errors.
 
-\[
-\begin{array}{c}
-    \Qcircuit @C=0.9em @R=1em {
-     &                       & \mbox{Encoder} &     &              &                  &     &               &     &                    &          & \mbox{Syndrome Extraction}                                              \\
-     & \lstick{\ket{\psi}_1} & \ctrl{2}       & \qw &              & \multigate{2}{E} & \qw &               & \qw & \qw                & \qw      & \multigate{2}{Z_1 Z_2}     & \qw      & \qw &               &     & \qw \\
-     &                       &                &     & \ket{\psi}_L &                  &     & E\ket{\psi}_L &     &                    &          &                            &          &     & E\ket{\psi}_L             \\
-     & \lstick{\ket{0}_2}    & \targ          & \qw &              & \ghost{E}        & \qw &               & \qw & \qw                & \qw      & \ghost{Z_1 Z_2}            & \qw      & \qw &               &     & \qw \\
-     &                       &                &     &              &                  &     &               &     & \lstick{\ket{0}_A} & \gate{H} & \ctrl{-1}                  & \gate{H} & \qw & \meter        & \cw & \cw \\
-    }
-\end{array}
-\]
+\begin{figure*}
+    \centering
+    \[
+        \begin{array}{c}
+            \Qcircuit @C=1.2em @R=1em {
+             &                       & \mbox{Encoder} &     &              &                  &     &               &     &                    &          & \mbox{Syndrome Extraction}                                              \\
+             & \lstick{\ket{\psi}_1} & \ctrl{2}       & \qw &              & \multigate{2}{E} & \qw &               & \qw & \qw                & \qw      & \multigate{2}{Z_1 Z_2}     & \qw      & \qw &               &     & \qw \\
+             &                       &                &     & \ket{\psi}_L &                  &     & E\ket{\psi}_L &     &                    &          &                            &          &     & E\ket{\psi}_L             \\
+             & \lstick{\ket{0}_2}    & \targ          & \qw &              & \ghost{E}        & \qw &               & \qw & \qw                & \qw      & \ghost{Z_1 Z_2}            & \qw      & \qw &               &     & \qw \\
+             &                       &                &     &              &                  &     &               &     & \lstick{\ket{0}_A} & \gate{H} & \ctrl{-1}                  & \gate{H} & \qw & \meter        & \cw & \cw \\
+            }
+        \end{array}
+    \]
+\end{figure*}
 
 \begin{table}[h]
     \centering
