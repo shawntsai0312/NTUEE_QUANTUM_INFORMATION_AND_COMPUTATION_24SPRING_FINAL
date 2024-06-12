@@ -3,10 +3,10 @@ Stabilizers are used to detect errors in the quantum state. In the context of su
 \subsection{Constructing stabilizer steps}
 \subsubsection{Boundary deformation}
 
-\begin{figure*}[h]
+\begin{figure*}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{sections/4_stabilizer/Fig1.png}
-    \caption{The Construction Steps for the Defect-Adaptive Surface Code.(a) An instance of a defective surface code lattice,the defective qubits and couplers in red, and boundary qubits are marked with star symbols. (b) code lattice after boundary deformation (c) code lattice after internal defect disabling. (d) code lattice after stabilizer patch, respectively. (e) The depiction for boundary data qubits and their frontiers, including X, Z, and corner boundary data qubits from top to bottom, along with their frontiers, encompassing couplers and syndrome qubits around data qubits. (f) Depicts the rules for internal defect disabling, showcasing the disabled qubits rules for defect syndrome qubits, data qubits, and couplers from top to bottom. (g) practice traditional super-stabilizers if internal defect qubits are not clustered. (h) in clustered situations, these super-stabilizers can stretch across weight-1 and bridge syndrome qubits. The middle of (h) highlights a bridge syndrome qubit for illustration purposes.}
+    \caption{The Construction Steps for the Defect-Adaptive Surface Code.(a) An instance of a defective surface code lattice,the defective qubits and couplers in red, and boundary qubits are marked with star symbols. (b) code lattice after boundary deformation (c) code lattice after internal defect disabling. (d) code lattice after stabilizer patch, respectively. (e) The depiction for boundary data qubits and their frontiers, including $X$, $Z$, and corner boundary data qubits from top to bottom, along with their frontiers, encompassing couplers and syndrome qubits around data qubits. (f) Depicts the rules for internal defect disabling, showcasing the disabled qubits rules for defect syndrome qubits, data qubits, and couplers from top to bottom. (g) practice traditional super-stabilizers if internal defect qubits are not clustered. (h) in clustered situations, these super-stabilizers can stretch across weight-1 and bridge syndrome qubits. The middle of (h) highlights a bridge syndrome qubit for illustration purposes.}
     \label{fig:Fig1}
 \end{figure*}
 
@@ -17,13 +17,13 @@ We first begin the boundary deformation process by addressing defects along the 
 
 \subsubsection{Internal defect disabling}
 
-The process of internal defect disabling involves addressing defects within the lattice. Internal defects are classified into three types: data qubits, syndrome qubits, and couplers. According to the rules, for data qubit and coupler defects, we disable the corresponding data qubits, while for syndrome qubit defects, we disable the syndrome qubits and their neighboring data qubits, which shown in Figure~\ref{fig:Fig1(f)}. This is because internal data qubits need two X and two Z syndrome qubits to detect Z and X errors. The defects must be addressed in a specific order—first defective syndrome qubits, then defective data qubits, and finally defective couplers—in order to ensure each rule is applied only once and to prevent conflicts. Additionally, we disable weight-0 syndrome qubits (a weight-n syndrome qubit has n undisabled data qubit neighbors) resulting from these actions. Internal defects may cluster, particularly at high defect rates, leading to situations like weight-1 syndrome qubits and bridge syndrome qubits, where a syndrome qubit connects to two active data qubits along the same diagonal. As shown in Figure~\ref{fig:Fig1}(h). Disabling these types of syndrome qubits, doing so might require reapplying internal defect rules, potentially disrupting the boundary shape and causing an avalanche effect where many qubits are disabled. To avoid this, the proposed method do not disable internal weight-1 and bridge syndrome qubits. Instead, the author use a bandage-like super-stabilizer strategy to reduce the number of disabled qubits, minimize super-stabilizer weight, and prevent an avalanche effect. 
+The process of internal defect disabling involves addressing defects within the lattice. Internal defects are classified into three types: data qubits, syndrome qubits, and couplers. According to the rules, for data qubit and coupler defects, we disable the corresponding data qubits, while for syndrome qubit defects, we disable the syndrome qubits and their neighboring data qubits, which shown in Figure~\ref{fig:Fig1}(f). This is because internal data qubits need two $X$ and two $Z$ syndrome qubits to detect $Z$ and $X$ errors. The defects must be addressed in a specific order—first defective syndrome qubits, then defective data qubits, and finally defective couplers—in order to ensure each rule is applied only once and to prevent conflicts. Additionally, we disable weight-0 syndrome qubits (a weight-n syndrome qubit has n undisabled data qubit neighbors) resulting from these actions. Internal defects may cluster, particularly at high defect rates, leading to situations like weight-1 syndrome qubits and bridge syndrome qubits, where a syndrome qubit connects to two active data qubits along the same diagonal. As shown in Figure~\ref{fig:Fig1}(h). Disabling these types of syndrome qubits, doing so might require reapplying internal defect rules, potentially disrupting the boundary shape and causing an avalanche effect where many qubits are disabled. To avoid this, the proposed method do not disable internal weight-1 and bridge syndrome qubits. Instead, the author use a bandage-like super-stabilizer strategy to reduce the number of disabled qubits, minimize super-stabilizer weight, and prevent an avalanche effect. 
 
 \subsubsection{Stabilizer patching}
 
-The proposed bandage-like super-stabilizers connect the same type of gauge syndrome qubits through disabled qubits, covering all internal disabled qubits. For unclustered internal defect qubits, these super-stabilizers are similarly to traditional super-stabilizers, which shown in Figure~\ref{fig:Fig1}(g). While for clustered defect qubits, they stretch across weight-1 and bridge syndrome qubits, preserving more data qubits and maintaining integrity, as  shown in Figure~\ref{fig:Fig1}(g). And then logical operators (X and Z) are placed on paths containing opposing types of syndrome qubits to avoid intersecting super-stabilizers and introducing gauge qubits. Eventually, the proposed method adapts the defect lattice depicted in Figure~\ref{fig:Fig1}(a) into surface code shown in Figure~\ref{fig:Fig1}(d)
+The proposed bandage-like super-stabilizers connect the same type of gauge syndrome qubits through disabled qubits, covering all internal disabled qubits. For unclustered internal defect qubits, these super-stabilizers are similarly to traditional super-stabilizers, which shown in Figure~\ref{fig:Fig1}(g). While for clustered defect qubits, they stretch across weight-1 and bridge syndrome qubits, preserving more data qubits and maintaining integrity, as  shown in Figure~\ref{fig:Fig1}(g). And then logical operators ($X$ and $Z$) are placed on paths containing opposing types of syndrome qubits to avoid intersecting super-stabilizers and introducing gauge qubits. Eventually, the proposed method adapts the defect lattice depicted in Figure~\ref{fig:Fig1}(a) into surface code shown in Figure~\ref{fig:Fig1}(d)
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.4\textwidth]{sections/4_stabilizer/Fig2.png}
     \caption{}
@@ -32,27 +32,27 @@ The proposed bandage-like super-stabilizers connect the same type of gauge syndr
 
 \subsection{Stabilizer measurement circuit} 
 
-Due to their anti-commuting gauge operators, constructing the stabilizer measurement circuits for adapted devices can't be directly measured like regular single-syndrome stabilizer. In the method, multiple bandage-like super-stabilizers may combine to form a group of super-stabilizers such as that in Figure~\ref{fig:Fig2}, where a group with two X and two Z bandage-like super-stabilizers. It is essential to ensure that X and Z super-stabilizers in the same group are not measured in the same cycle, while the same type within a group is measured simultaneously.
+Due to their anti-commuting gauge operators, constructing the stabilizer measurement circuits for adapted devices can't be directly measured like regular single-syndrome stabilizer. In the method, multiple bandage-like super-stabilizers may combine to form a group of super-stabilizers such as that in Figure~\ref{fig:Fig2}, where a group with two $X$ and two $Z$ bandage-like super-stabilizers. It is essential to ensure that $X$ and $Z$ super-stabilizers in the same group are not measured in the same cycle, while the same type within a group is measured simultaneously.
 To enhance error correction capability, the method repeat the measurement of the same type of gauge operator for several consecutive cycles to gather information about each operator's value. The number of consecutive measurement cycles is referred to as the shell size, as shown in Figure~\ref{fig:Fig2}. It is necessary to determine the appropriate shell size for each stabilizer group while considering experimental constraints. There are two strategies for determining the shell size: the global strategy applies the same shell size to all stabilizer groups, while the local strategy assigns each group its own shell size. The choice of shell size depends on the processor and physical system characteristics.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.3\textwidth]{sections/4_stabilizer/Fig3c.png}
-    \caption{Average X Distance vs Defect Rate}
+    \caption{Average $X$ Distance vs Defect Rate}
     \label{fig:Fig3c}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.3\textwidth]{sections/4_stabilizer/Fig3d.png}
-    \caption{Average Z Distance vs Defect Rate}
+    \caption{Average $Z$ Distance vs Defect Rate}
     \label{fig:Fig3d}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.3\textwidth]{sections/4_stabilizer/Fig3e.png}
-    \caption{Average Z Distance vs Defect Rate}
+    \caption{Average $Z$ Distance vs Defect Rate}
     \label{fig:Fig3e}
 \end{figure}
 

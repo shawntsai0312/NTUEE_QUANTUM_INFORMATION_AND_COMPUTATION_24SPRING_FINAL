@@ -40,11 +40,12 @@
 
 % Additional useful packages
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
 \usepackage{mathtools}
 \usepackage{caption}
 \usepackage{geometry}
+\usepackage[utf8]{inputenc}
 
 % Table packages
 \usepackage{booktabs,caption}
@@ -79,21 +80,27 @@
 
 \begin{frontmatter}
 
-    \title{An Introduction and Review on Recent Developments}
+  \title{
+    \huge Surface Code \\
+    \large An Introduction and Review on Recent Developments
+  }
 
-    \author{Group 28}
+  \author{
+    Group 28, HAO-YU CHANG, HUNG-SHIANG TSAI, HSUAN-TING LIN \\
+    \href[]{https://youtu.be/kfwMb4RJNBo}{Youtube Video Link: https://youtu.be/kfwMb4RJNBo}
+  }
 
-    \begin{abstract}
-        %% Text of abstract
-        Today, Quantum computers have high error rates compared to the classical computer. In order to make quantum computers useful, error rates have to be as low as 1 in a trillion. While a typical transistor in a microprocessor can run for about a billion years at a billion operations per second, without ever suffering a hardware fault due to any form of interference. A huge improvement in performance is needed, since the typical quantum bits become randomized in about one one-thousandth of a second. Classical error correction employ redundacy, however, it is impossible for quantum code due to no-cloning theorem. In this review, we will summarize one of the promising method – surface code. Besides, the novel improvement of the algorithm and decoder will also be provided.
+  \begin{abstract}
+    %% Text of abstract
+    Quantum computing, despite its immense potential, is currently hindered by high error rates that significantly exceed those found in classical computing systems. For quantum computers to become practical, error rates must be dramatically reduced to around 1 in a trillion operations. This paper reviews the current state of quantum error correction, focusing on the surface code, a highly promising method for enhancing the reliability of quantum computations. Unlike classical error correction, which uses redundancy, quantum error correction faces unique challenges due to the no-cloning theorem and the superposition of qubits. We explore the foundational principles of the surface code, its implementation, and recent advancements in its algorithms and decoders. We also discuss the theoretical and practical aspects of employing surface codes to protect quantum information from decoherence and operational errors, highlighting the ongoing efforts to improve their efficiency and scalability for practical quantum computing applications.
     \end{abstract}
 
-    \begin{keyword}
-        %% keywords here, in the form: keyword \sep keyword, up to a maximum of 6 keywords
-        Quantum Computation \sep Quantum Error Correction \sep Surface Code \sep Stabilizer codes
-    \end{keyword}
+  \begin{keyword}
+    %% keywords here, in the form: keyword \sep keyword, up to a maximum of 6 keywords
+    Quantum Computation \sep Quantum Error Correction \sep Surface Code \sep Stabilizer codes
+  \end{keyword}
 
-
+  % https://youtu.be/kfwMb4RJNBo
 \end{frontmatter}
 
 %\tableofcontents
@@ -106,43 +113,32 @@
 \label{introduction}
 \input{sections/1_introduction/1.tex}
 
-\section{Review of the surface code}
+\section{Review of the Surface Code}
 \label{review}
 \input{sections/2_review_surface_code/2.tex}
 
-\section{Decoder}
+\section{Advanced Decoding Techniques}
 \label{decoder}
 \input{sections/3_decoder/3.tex}
 
-\section{Stabilizer}
+\section{Enhancements in Stabilizer Codes}
 \label{stabilizer}
 \input{sections/4_stabilizer/4.tex}
 
-\section{Practical implementation of the surface code}
+\section{Practical Implementation of the Surface Code}
 \label{algorithm}
 \input{sections/5_practical_implementation/5.tex}
 
-%% If you have bibdatabase file and want bibtex to generate the
-%% bibitems, please use
-%%
+\section{Outlook and Summary}
+\label{outlook}
+\input{sections/6_outlook/6.tex}
+
+\nocite{*}  % Include all references from the bibliography file
+
 \bibliographystyle{elsarticle-harv}
-\bibliography{example}
-
-%% else use the following coding to input the bibitems directly in the
-%% TeX file.
-
-%%\begin{thebibliography}{00}
-
-%% \bibitem[Author(year)]{label}
-%% For example:
-
-%% \bibitem[Aladro et al.(2015)]{Aladro15} Aladro, R., Martín, S., Riquelme, D., et al. 2015, \aas, 579, A101
-
-
-%%\end{thebibliography}
+\bibliography{ref.bib}
 
 \end{document}
-
 \endinput
 %%
 %% End of file `elsarticle-template-harv.tex'.

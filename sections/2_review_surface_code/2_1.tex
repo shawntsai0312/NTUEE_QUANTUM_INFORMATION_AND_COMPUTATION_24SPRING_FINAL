@@ -1,6 +1,6 @@
 \subsubsection{Classical error correction}
 
-The basic principle behind classical error correction is to increase the bits used to encode information. The exact method to introduce redundancy and retrieve information is known as a correction code. A simple example is the three-bit repetition code: the bit 0 is encoded into three bits as 000, and the bit 1 is encoded into 111, the encoded bit strings are referred to as codewords.
+The basic principle behind classical error correction is to increase the number of the bits used to encode information. The exact method to introduce redundancy and retrieve information is known as a correction code. A simple example is the three-bit repetition code: the bit 0 is encoded into three bits as 000, and the bit 1 is encoded into 111, the encoded bit strings are referred to as codewords.
 
 If the message is subject to a single-bit error, we can still retrieve the correct information via a majority vote. However, it is easy to see that this code is vulnerable to two or more bit-flip errors.
 
@@ -49,4 +49,4 @@ The error correction process involves performing projective measurements that ca
 
 \subsubsection{Challenges in quantum error correction}
 
-Qubits states are confined to the no-cloning theorem, thus making it impossible for us to add redundancy by simply copying states and using the tensor product. The second complication in quantum coding arises from the fact that qubits are susceptible to both bit-flips ($X$-errors) and phase-flips ($Z$-errors),  and we need to design codes to detect both errors simultaneously. The last challenge in quantum error correction is the fact that quantum states collapse after measurement, thus the error correction procedure must be carefully chosen so as not to cause the wave function to collapse and erase the encoded information.
+Qubits states are confined by the no-cloning theorem, thus making it impossible for us to add redundancy by simply copying states and using the tensor product. The second complication in quantum coding arises from the fact that qubits are susceptible to both bit-flips ($X$-errors) and phase-flips ($Z$-errors),  and we need to design codes to detect both errors simultaneously. The last challenge in quantum error correction is the fact that quantum states collapse after measurement, thus the error correction procedure must be carefully chosen so as not to cause the wave function to collapse and erase the encoded information.

@@ -4,11 +4,11 @@ The general design principle behind the surface code is that the code is built u
 
 \subsubsection{The surface code four-cycle}
 
-The basic element in the surface code is shown in the figure~\ref{fig:four_cycle} below, squares represent ancilla qubits, while circles represent data qubits. Black edges represent controlled $X$ gates, each controlled on an ancilla qubit $A$ and acting on a data qubit $D$. Likewise, the dashed edges represent controlled-$Z$ operations, each controlled by an ancilla qubit and acting on a data qubit.
-For example, ancilla $A_1$ measures the stabilizer $XD_1XD_2$.
+The basic element in the surface code is shown in figure~\ref{fig:four_cycle}, squares represent ancilla qubits, while circles represent data qubits. Black edges represent controlled $X$ gates, each controlled on an ancilla qubit $A$ and acting on a data qubit $D$. Likewise, the dashed edges represent controlled-$Z$ operations, each controlled by an ancilla qubit and acting on a data qubit.
+For example, ancilla $A_1$ measures the stabilizer $X_{D_1}X_{D_2}$.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.2\textwidth]{sections/2_review_surface_code/four_cycle.png}
+    \includegraphics[width=0.15\textwidth]{sections/2_review_surface_code/four_cycle.png}
     \caption{Pictorial representation of the four cycle. The code qubits, $D_1$ and $D_2$, are represented by the circular nodes. The ancilla qubits, $A_1$ and $A_2$, are represented by the square nodes. The black and dashed edges depict controlled-$X$ and controlled-$Z$ operations controlled on the ancilla qubits and acting on the code qubits.}
     \label{fig:four_cycle}
 \end{figure}
@@ -16,16 +16,21 @@ The surface code four-cycle is not useful itself as it encodes $k=n-m=0$ qubits,
 
 \subsubsection{The [[5, 1, 2]] surface code}
 
-The figure~\ref{fig:512} below shows the five-qubit surface code formed by tiling four four-cycles in a square.
+Figure~\ref{fig:512} shows the five-qubit surface code formed by tiling four four-cycles in a square.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.2\textwidth]{sections/2_review_surface_code/512.png}
     \caption{The $[[5,1,2]]$ surface code is formed by tiling together four four-cycles in a square lattice.}
     \label{fig:512}
 \end{figure}
+
 The stabilizers can be read off to give
 
-The logical operators of the surface code can be defined as chains of Pauli operators along the edges of the boundaries of the surface code. For example, $XD_1XD_4$ and $ZD_1ZD_2$ are both valid operators.
+\[
+\mathcal{S}_{[[5,1,2]]} = \langle X_{D_1}X_{D_2}X_{D_3}, Z_{D_1}Z_{D_3}Z_{D_4}, Z_{D_2}Z_{D_3}Z_{D_5}, X_{D_3}X_{D_4}X_{D_5} \rangle 
+\]
+
+The logical operators of the surface code can be defined as chains of Pauli operators along the edges of the boundaries of the surface code. For example, $X_{D_1}X_{D_4}$ and $Z{D_1}Z{D_2}$ are both valid operators.
 
 \begin{figure}[h]
     \centering
